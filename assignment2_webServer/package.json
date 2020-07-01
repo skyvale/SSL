@@ -1,0 +1,45 @@
+{
+    "title": "Business Frontpage",
+    "name": "startbootstrap-business-frontpage",
+    "version": "4.2.2",
+    "main": "js/index.js",
+    "scripts": {
+        "start": "node js/index",
+        "dev": "nodemon js/index"
+    },
+    "description": "A simple business HTML landing page built with Bootstrap",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "homepage": "https://startbootstrap.com/templates/business-frontpage",
+    "bugs": {
+        "url": "https://github.com/StartBootstrap/startbootstrap-business-frontpage/issues",
+        "email": "feedback@startbootstrap.com"
+    },
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "contributors": [
+        "David Miller (http://davidmiller.io/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/StartBootstrap/startbootstrap-business-frontpage.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.5.0",
+        "jquery": "3.5.1",
+        "node": "^14.4.0",
+        "nodemon": "^2.0.4"
+    },
+    "devDependencies": {
+        "browser-sync": "2.26.7",
+        "del": "5.1.0",
+        "gulp": "4.0.2",
+        "merge-stream": "2.0.0"
+    }
+}
