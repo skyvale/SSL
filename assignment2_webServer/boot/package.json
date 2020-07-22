@@ -1,13 +1,11 @@
 {
-    "title": "Business Frontpage",
-    "name": "startbootstrap-business-frontpage",
+    "title": "Modern Business",
+    "name": "startbootstrap-modern-business",
     "version": "4.2.2",
-    "main": "js/index.js",
     "scripts": {
-        "start": "node js/index",
-        "dev": "nodemon js/index"
+        "start": "node_modules/.bin/gulp watch"
     },
-    "description": "A simple business HTML landing page built with Bootstrap",
+    "description": "A multipurpose HTML website template built with Bootstrap",
     "keywords": [
         "css",
         "sass",
@@ -16,9 +14,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/templates/business-frontpage",
+    "homepage": "https://startbootstrap.com/template-overviews/modern-business",
     "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-business-frontpage/issues",
+        "url": "https://github.com/StartBootstrap/startbootstrap-modern-business/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -28,13 +26,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-business-frontpage.git"
+        "url": "https://github.com/StartBootstrap/startbootstrap-modern-business.git"
     },
     "dependencies": {
         "bootstrap": "4.5.0",
-        "jquery": "3.5.1",
-        "node": "^14.4.0",
-        "nodemon": "^2.0.4"
+        "jquery": "3.5.1"
     },
     "devDependencies": {
         "browser-sync": "2.26.7",

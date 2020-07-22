@@ -12,16 +12,13 @@ http.createServer( (req, res) => {
     // ? : turnary
     filen = filename.name == "" ? "index" : filename.name;
     ext = filename.ext == "" ? ".html" : filename.ext;
-    dir = filename.dir == "/" ? "" : filename.dir + "/";
-    page = filename.name == "" ? "index.html" : filename.name;
+    dir = filename.dir == "/" ? "" : filename.dir + "/"; // you will need a '/' after the directory
+    page = filename.name == "" ? "index.html" : filename.name; //if the filename is blank, it should route to the index.html (homepage)
 
-    f = __dirname+'/../html/' + (dir + filen + ext).replace("/", "");
-    console.log("dir" + dir);
-    console.log("filen: " + filen);
-    console.log("ext: " + ext);
-    console.log("page: " + page);
-    console.log("f: " + f);
+    // replace the '/' because you dont need the first / in /boot/vendor/...
+    f = (dir + filen + ext).replace("/", "");
 
+    // mimeTypes is an object
     const mimeTypes = {
         '.html': 'text/html',
         '.js': 'text/javascript',
@@ -33,17 +30,16 @@ http.createServer( (req, res) => {
 
     if(f) {
         fs.readFile(f, (err,data) => {
-            console.log("data: ");
-            console.log(data);
-            console.log("err: ", err);
+
             if(page) {
                 if (mimeTypes.hasOwnProperty(ext)) {
                     res.writeHead(200, {'Content-Type': mimeTypes[ext]});
+                    res.write("<script>var page='" + page + "';</script>");
                     res.end(data, 'utf-8');
                 }
             }
             
-        })
+        });
     }
 
 }).listen('8080', () => {
