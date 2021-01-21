@@ -32,6 +32,7 @@ http.createServer( (req, res) => {
         fs.readFile(f, (err,data) => {
 
             if(page) {
+                // checks what type the file is and adds the extension to the end
                 if (mimeTypes.hasOwnProperty(ext)) {
                     res.writeHead(200, {'Content-Type': mimeTypes[ext]});
                     res.write("<script>var page='" + page + "';</script>");

@@ -29,13 +29,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" id="about" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" id="services" href="services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" id="contact" href="contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -156,7 +156,7 @@
   <script src="boot/vendor/jquery/jquery.min.js"></script>
   <script src="boot/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/JavaScript">
-    let act = document.querySelector(".active a");
+    let act = document.getElementById(page);
     act.style.color = "cyan";
   </script>
 
