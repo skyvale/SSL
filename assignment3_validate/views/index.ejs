@@ -22,13 +22,13 @@
     <!-- Navigation -->
     <%- include("partials/nav") %>
 
+    <!-- ERRORS -->
     <% if( typeof(errors) != "undefined") { %>
-        <% for(x in errors) { %>
-          <br><span><% errors[x] %></span>
-        <% } %>
-        alert(errors);
+      <% for (x in errors) { %>
+        <br><span style="display:block; z-index: 9999; position: fixed; background-color: #fff;"><%= errors[x] %></span>
+      <% } %>
     <% } %>
-
+    
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">

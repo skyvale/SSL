@@ -52,48 +52,64 @@ router.get("/about", function(req,res){
 
 // route that catches the data from the login form request
 router.post("/login", function(req,res){
-    //the bodyparser will parse the info from the form
+    //the bodyparser will parse the info from the form via the NAME
+    /*
     console.log(req.body.firstname); //working
     console.log(req.body.lastname); //working
     console.log(req.body.city); //working
     console.log(req.body.state); //working
     console.log(req.body.zipcode); //working
-    console.log(req.body.male); // NOPE
-    console.log(req.body.female); // NOPE
+    console.log(req.body.age); // working
+    console.log(req.body.gender); // working
     console.log(req.body.consent); //working
     console.log(req.body.bio); //working
+    */
 
     // VALIDATE USER INPUT
     var errors = []; // keep track of any errors that occurs
-    if(req.body.firstname === "") {
+
+    // validate FIRSTNAME
+    if(req.body.firstname == "") {
         errors.push("First name is required!");
     }
-    if (req.body.lastname === "") {
+    // validate LASTNAME
+    if (req.body.lastname == "") {
         errors.push("Last name is required!");
     }
-    if (req.body.city === "") {
+    // validate CITY
+    if (req.body.city == "") {
         errors.push("City is required!");
     }
-    if (req.body.lastname === "") {
+    // validate STATE
+    if (req.body.state == "") {
         errors.push("State is required!");
     }
-    if (req.body.bio === "") {
-        errors.push("Bio is required!");
-    }
-    if (req.body.consent !== "true") {
-        errors.push("You must consent to use this website!");
-    }
-
-    // validate using 'regular expression'
+    // validate ZIP CODE
+    // validates using 'regular expression'
     let validateZip = /^\d{5}(?:[-\s]\d{4})?$/;
     if(!validateZip.test(req.body.zipcode)) {
         errors.push("Zip code is not valid!");  
     }
+    // validate GENDER
+    if (req.body.gender != "male" && req.body.gender != "female") {
+        errors.push("You must select a gender!");
+    }
+    // validate CONSENT
+    if (req.body.consent != "true") {
+        errors.push("You must consent to use this website!");
+    }
+    // validate BIO
+    if (req.body.bio == "") {
+        errors.push("Bio is required!");   
+    }
 
-    // checks if a radio button is selected (user must select one)
-    // if (document.getElementById("male").checked && document.getElementById("female").checked)
+    // if there are no errors added to array, it is successful so add "success"
+    if (errors.length == 0) {
+        errors.push("success");
+    }
 
-    res.render("index",{pagename:"Home"});
+    // console.log(errors);
+    res.render("index",{pagename:"Home", errors:errors});
 
 });
 
