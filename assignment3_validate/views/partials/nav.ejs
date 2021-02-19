@@ -1,0 +1,79 @@
+<!-- nav.ejs -->
+<!-- /views/partial/nav.ejs-->
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <% if(pagename == "Home"){ %>
+            <a class ="nav-link" style="color:orange" href="/">Home</a>
+            <% } else{ %>
+                <a class ="nav-link" href="/">Home</a>
+            <% } %>
+            
+            <% if(pagename == "About"){ %>
+                <a class ="nav-link" style="color:orange" href="/about">About</a>
+            <% } else{ %>
+                <a class ="nav-link" href="/about">About</a>
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- styling for login form -->
+  <div 
+    style="z-index: 9999; display: block;
+    text-align: right;
+    background-color: #333a40;
+    margin-right: 0px;
+    padding-right: 20px;
+    color: gray;
+    position: absolute;
+    width: 300px;
+    margin-top: 4px;
+    padding-top: 5px;
+    top: 200px;
+    right: 0px;
+    border-radius: 10px;
+    padding: 11px;
+    font-size: 12px;"> 
+    
+      <!-- the login form -->
+      <form action="/login" method="POST">
+        <input type="text" name="firstname" placeholder="First Name">
+        <input type="text" name="lastname" placeholder="Last Name">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State">
+        <input type="text" name="zipcode" placeholder="Zip">
+
+        <label for="age">What is your age?</label>
+        <select id="age" name="age">
+          <option value="under21">Under 21</option>
+          <option value="2130">21-30</option>
+          <option value="3155">31-55</option>
+          <option value="over55">Over 55</option>
+        </select>
+
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+
+        <label for="consent">Do you consent to using this website?</label>
+        <input type="checkbox" id="consent" name="consent" value="true">
+
+        <label for="bio">Tell us about yourself:</label>
+        <textarea id="bio" name="bio" style="width: 150px; height: 100px;"></textarea>
+
+        <input type="submit">  
+      </form>
+
+  </div>

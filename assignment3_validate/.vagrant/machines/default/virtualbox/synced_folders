@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Users/skylarvalerio/Desktop/SSL/assignment3_validate","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/skylarvalerio/Desktop/SSL/assignment3_validate","disabled":false,"__vagrantfile":true}}}
